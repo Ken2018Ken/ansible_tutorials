@@ -3,3 +3,4 @@
 ubuntu-prod ansible_host=10.68.23.136 ansible_user=ninjaprod
 ubuntu-dev ansible_host=10.68.23.137 ansible_user=ninjadev
 nfs-server ansible_host=10.68.23.134 ansible_user=ninja01
+python-server ansible_host=10.68.23.217 ansible_user=kninja ansible_sudo_pass='hajjia$$'
