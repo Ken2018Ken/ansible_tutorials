@@ -22,6 +22,27 @@
 
 
 
+- hosts: workstations
+  become: true
+  tasks:
+
+  - name: install unzip
+    package: 
+      name: unzip
+
+  - name: install terraform
+    unarchive:
+      src: https://releases.hashicorp.com/terraform/1.9.8/terraform_1.9.8_linux_amd64.zip
+      dest: /usr/local/bin
+      remote_src: yes
+      mode: 0755
+      owner: root
+      group: root
+
+
+
+
+
 
 
 - hosts: web_servers
@@ -48,6 +69,38 @@
         - php
       state: latest
     when: ansible_distribution == "RedHat"
+
+
+
+  - name: start httpd (Redhat)
+    tags: apache,centos,httpd
+    service:
+      name: httpd
+      state: started
+      enabled: yes
+    when: ansible_distribution == "RedHat"
+
+
+
+
+  - name: change admin email address
+    tags: apache,redhat,httpd
+    lineinfile:
+      path: /etc/httpd/conf/httpd.conf
+      regexp: '^ServerAdmin'
+      line: ServerAdmin kninja@gmail.com
+    when: ansible_distribution == "RedHat"
+    register: httpd
+
+
+  - name: restart httpd (RedHat)
+    tags: apache,redhat,httpd
+    service:
+      name: httpd
+      state: restarted
+    when: httpd.changed
+
+
 
   - name: copy default html file for site
     tags: apache,apache2,httpd
