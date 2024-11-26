@@ -1,0 +1,6 @@
+
+[homelab]
+ubuntu-prod ansible_host=10.68.20.128 ansible_user=ninjaprod apache_package=apache2 php_package=libapache2-mod-php
+ubuntu-dev ansible_host=10.68.20.135 ansible_user=ninjadev apache_package=apache2 php_package=libapache2-mod-php
+nfs-server ansible_host=10.68.20.134 ansible_user=ninja01 apache_package=apache2 php_package=libapache2-mod-php
+python-server ansible_host=10.68.23.217 ansible_user=kninja ansible_sudo_pass='hajjia$$' apache_package=httpd php_package=php

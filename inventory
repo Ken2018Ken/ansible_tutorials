@@ -1,6 +1,24 @@
 
-[homelab]
-ubuntu-prod ansible_host=10.68.23.136 ansible_user=ninjaprod
-ubuntu-dev ansible_host=10.68.23.137 ansible_user=ninjadev
-nfs-server ansible_host=10.68.23.134 ansible_user=ninja01
+[db_servers]
+ubuntu-prod ansible_host=10.68.21.152 ansible_user=ninjaprod
+
+
+[file_server]
+nfs-server ansible_host=10.68.21.151 ansible_user=ninja01
+
+
+
+[web_servers]
 python-server ansible_host=10.68.23.217 ansible_user=kninja ansible_sudo_pass='hajjia$$'
+ubuntu-dev ansible_host=10.68.21.153 ansible_user=ninjadev
+
+
+
+
+
+
+
+
+
+
+

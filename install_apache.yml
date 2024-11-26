@@ -5,40 +5,26 @@
   tasks:
 
 
-  - name: update repository index
+  - name: update chache,install apache2 package and PHP packages for ubuntu
     apt:
+      name: 
+        - apache2
+        - libapache2-mod-php
+      state: absent
       update_cache: yes
     when: ansible_distribution == "Ubuntu"
 
-  - name: install apache2 package
-    apt:
-      name: apache2
-      state: latest
-    when: ansible_distribution == "Ubuntu"
-
-  - name: add php support for apache
-    apt:
-      name: libapache2-mod-php
-      state: latest
-    when: ansible_distribution == "Ubuntu"
 
 
-  - name: update repository index
+  - name: update chache,install httpd package and PHP packages for Redhat
     yum:
-        update_cache: yes
+      name: 
+        - httpd
+        - php
+      state: absent
+      update_cache: yes
     when: ansible_distribution == "RedHat"
 
-  - name: install httpd package
-    yum:
-      name: httpd
-      state: latest
-    when: ansible_distribution == "RedHat"
-
-  - name: add php support for apache
-    yum:
-      name: php
-      state: latest
-    when: ansible_distribution == "RedHat"
 
 
 
