@@ -13,6 +13,10 @@ python-server ansible_host=10.68.23.217 ansible_user=kninja ansible_sudo_pass='h
 ubuntu-dev ansible_host=10.68.21.153 ansible_user=ninjadev
 
 
+[workstations]
+Planet-x-WS ansible_host=10.68.22.162 ansible_user=ninja01
+
+
 
 
 
