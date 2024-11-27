@@ -1,0 +1,52 @@
+---
+
+- hosts: all
+  become: true
+  pre_tasks:
+
+
+  - name: install updates (Redhat)
+    tags: always
+    yum:
+      update_only: yes
+      update_cache: yes
+    when: ansible_distribution == "RedHat"
+
+  
+  - name: install updates (Ubuntu)
+    tags: always
+    apt:
+      upgrade: dist
+      update_cache: yes
+    when: ansible_distribution == "Ubuntu"
+
+
+- hosts: all
+  become: true
+  tasks:
+
+
+  - name: create spider
+    tags: always
+    user:
+      name: spider
+      groups: root
+
+
+  - name: add ssh key for spider
+    tags: always
+    authorized_key:
+      user: spider
+      key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINODETUAEerEfa5ZNWhAvRxj9mC40IzJyGeRzdAMm0HI Ansible-planetx
+
+  - name: add spider to sudoers file
+    tags: always
+    copy: 
+      src: sudoer_spider
+      dest: /etc/sudoers.d/spider
+      owner: root
+      group: root
+
+    
+
+
