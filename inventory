@@ -1,20 +1,20 @@
 
 [db_servers]
-ubuntu-prod ansible_host=10.68.21.152 ansible_user=ninjaprod
+ubuntu-prod ansible_host=10.68.22.136
 
 
 [file_server]
-nfs-server ansible_host=10.68.21.151 ansible_user=ninja01
+nfs-server ansible_host=10.68.22.139
 
 
 
 [web_servers]
-python-server ansible_host=10.68.23.217 ansible_user=kninja ansible_sudo_pass='hajjia$$'
-ubuntu-dev ansible_host=10.68.21.153 ansible_user=ninjadev
+python-server ansible_host=10.68.23.217
+ubuntu-dev ansible_host=10.68.22.140
 
 
 [workstations]
-Planet-x-WS ansible_host=10.68.22.162 ansible_user=ninja01
+Planet-x-WS ansible_host=10.68.22.162
 
 
 
