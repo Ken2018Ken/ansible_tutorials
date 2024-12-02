@@ -1,0 +1,6 @@
+- name: install netdiscover
+  tags: homelab
+  package:
+    name: netdiscover
+    state: latest
+

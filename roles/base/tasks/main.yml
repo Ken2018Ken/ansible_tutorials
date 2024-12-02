@@ -1,0 +1,5 @@
+- name: add ssh key for spider
+  authorized_key:
+    user: spider
+    key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINODETUAEerEfa5ZNWhAvRxj9mC40IzJyGeRzdAMm0HI Ansible-planetx
+

@@ -1,0 +1,15 @@
+- name: install mariaDB package (RedHat)
+  tags: redhat,db,mariadb
+  yum:
+    name: mariadb
+    state: latest
+  when: ansible_distribution == "RedHat"
+
+
+- name: install mariaDb package (Ubuntu)
+  tags: ubuntu,db,mariadb
+  apt:
+    name: mariadb-server
+    state: latest
+  when: ansible_distribution == "Ubuntu"
+
