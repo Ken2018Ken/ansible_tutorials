@@ -1,6 +1,6 @@
 
 [db_servers]
-ubuntu-prod ansible_host=10.68.23.117
+ubuntu-prod ansible_host=10.68.23.209
 
 
 [file_servers]

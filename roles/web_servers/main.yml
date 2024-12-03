@@ -1,9 +1,9 @@
-- name: install apache and PHP packages
+- name: install apache and php packages
   tags: apache,httpd,php
   package:
     name: 
-      - "{{ apache_package_name}}"
-      - "{{ php_package_name}}"
+      - "{{ apache_package_name }}"
+      - "{{ php_package_name }}"
     state: latest
 
 
@@ -16,12 +16,13 @@
 
 
 
+
 - name: change admin email address
   tags: apache,redhat,httpd
   lineinfile:
     path: /etc/httpd/conf/httpd.conf
     regexp: '^ServerAdmin'
-    line: ServerAdmin kninja@gmail.cat
+    line: ServerAdmin kninja@gmail.net
   when: ansible_distribution == "RedHat"
   notify: restart_apache
 
@@ -36,5 +37,3 @@
     owner: root
     group: root
     mode: 0644
-
-

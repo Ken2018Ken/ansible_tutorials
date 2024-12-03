@@ -1,25 +1,25 @@
 
 [db_servers]
-ubuntu-prod ansible_host=10.68.23.117
+ubuntu-prod ansible_host=10.26.26.158
 
 
 [file_servers]
-nfs-server ansible_host=10.68.23.118
+nfs-server ansible_host=10.26.26.151
 
 
 
 [web_servers]
-python-server ansible_host=10.68.23.112
-ubuntu-dev ansible_host=10.68.23.114
+python-server ansible_host=10.26.26.154
+ubuntu-dev ansible_host=10.26.26.155
 
 
 [workstations]
-Planet-x-WS ansible_host=10.68.23.115
+Planet-x-WS ansible_host=10.26.26.150
 
 
 [homelab]
-cybersec ansible_host=10.68.23.113
-terraform-lab ansible_host=10.68.23.129
+cybersec ansible_host=10.26.26.153
+terraform-lab ansible_host=10.26.26.157
 
 
 
